@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
+import 'package:todo_app/core/themes/color_manager.dart';
 import 'package:todo_app/features/auth/domain/entities/user_entity.dart';
 import 'package:todo_app/features/auth/presentation/blocs/auth/auth_bloc.dart';
 import 'package:todo_app/features/auth/presentation/widgets/auth_btn.dart';
@@ -88,7 +89,7 @@ class LoginFormState extends State<LoginForm> {
                       return AuthButton(
                           text: "Login",
                           onPressed: validateAndLoginUser,
-                          color: Colors.blue);
+                          color: ColorManager.seedColorLight);
                     }
                   },
                 ),
@@ -96,7 +97,7 @@ class LoginFormState extends State<LoginForm> {
                 AuthButton(
                     text: "Register",
                     onPressed: () => GoRouter.of(context).goNamed('register'),
-                    color: Colors.green),
+                    color: const Color.fromARGB(255, 116, 48, 82)),
               ],
             ),
           ),
